@@ -1,0 +1,47 @@
+.bp { margin-top: 18px; }
+.bp__err { margin-bottom: 12px; }
+.bp__cta { width: 100%; display: grid; place-items: center; text-decoration: none; }
+.bp__fine { margin: 11px 0 0; font-size: .72rem; line-height: 1.5; color: var(--resist-dim); }
+.bp__closed { font-size: .84rem; color: var(--resist-dim); margin: 0; line-height: 1.55; }
+
+.bp__two { display: grid; grid-template-columns: 1fr 88px; gap: 10px; }
+
+.bp__total {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 12px 0; margin-bottom: 14px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  font-size: .84rem; color: var(--resist-mid);
+}
+.bp__total strong { font-size: 1.1rem; color: var(--resist); }
+
+.bp__state .eyebrow { display: block; margin-bottom: 12px; }
+.bp__msg { font-size: .87rem; line-height: 1.55; margin: 0 0 14px; }
+.bp__actions { display: flex; flex-direction: column; gap: 8px; }
+.bp__actions .btn { width: 100%; }
+
+/* the 95/5 split, shown as one bar because the ratio is the argument */
+.split { margin-bottom: 18px; }
+.split__bar {
+  display: flex; height: 8px; border-radius: 99px; overflow: hidden;
+  background: var(--vat-deep); border: 1px solid var(--line);
+}
+.split__a { background: var(--verdigris); }
+.split__i { background: var(--haldi); }
+.split__rows { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.split__rows > div { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.split__key { font-size: .78rem; color: var(--resist-mid); }
+.split__val { font-size: .84rem; }
+
+.bp__qr {
+  width: 148px; height: 148px;
+  display: block; margin: 4px auto 0;
+  border-radius: var(--r);
+  background: #fff; padding: 6px;
+}
+
+.bp__settled {
+  font-size: .8rem; line-height: 1.85; color: var(--verdigris);
+  padding: 12px 14px; background: rgba(78,140,125,.07);
+  border-radius: var(--r); margin: 0 0 16px;
+  word-break: break-all;
+}

@@ -1,0 +1,14 @@
+groq
+langchain
+langchain-community
+langchain-groq
+chromadb
+sentence-transformers
+flask
+flask-cors
+pymongo
+python-dotenv
+pypdf
+pandas
+openpyxl
+tiktoken

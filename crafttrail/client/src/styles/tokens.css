@@ -1,0 +1,170 @@
+/*
+  CraftTrail — light ground, indigo ink.
+
+  The palette still comes from the indigo vat, but inverted: undyed cloth is now
+  the paper and indigo is the ink. Madder and haldi are the two accents.
+  Verdigris — oxidised Dhokra bronze — carries "welcoming visitors".
+
+  Six themes are named for what actually makes the colour. Three typefaces.
+  Both swap CSS custom properties on <html>, so switching costs no re-render and
+  cannot leak into the certificate, which pins its own colours.
+*/
+
+/* ---------------- themes ---------------- */
+
+:root,
+[data-theme='clay'] {
+  --ground: #f5f0e6;
+  --surface: #fffdf8;
+  --sunk: #ece5d6;
+  --ink: #14213d;
+  --ink-mid: #4b5878;
+  --ink-dim: #8d94a6;
+  --line: rgba(20, 33, 61, 0.12);
+  --line-strong: rgba(20, 33, 61, 0.26);
+  --accent: #b4402f;
+  --accent-soft: #d8705f;
+  --accent-2: #c98a1e;
+  --live: #3e7d6e;
+  --on-accent: #fffdf8;
+  --tiles: light;
+}
+
+[data-theme='night'] {
+  --ground: #0a1122;
+  --surface: #17243d;
+  --sunk: #0d1628;
+  --ink: #ede7db;
+  --ink-mid: #a9b0bf;
+  --ink-dim: #717b8e;
+  --line: rgba(237, 231, 219, 0.11);
+  --line-strong: rgba(237, 231, 219, 0.24);
+  --accent: #c9503e;
+  --accent-soft: #dd7d6c;
+  --accent-2: #dfa83c;
+  --live: #56a08e;
+  --on-accent: #0a1122;
+  --tiles: dark;
+}
+
+[data-theme='haldi'] {
+  --ground: #fbf3df;
+  --surface: #fffcf1;
+  --sunk: #f2e7c9;
+  --ink: #3a2a10;
+  --ink-mid: #6d5a34;
+  --ink-dim: #9d8c69;
+  --line: rgba(58, 42, 16, 0.13);
+  --line-strong: rgba(58, 42, 16, 0.28);
+  --accent: #a8391f;
+  --accent-soft: #c96b52;
+  --accent-2: #9a6f11;
+  --live: #4a7a44;
+  --on-accent: #fffcf1;
+  --tiles: light;
+}
+
+[data-theme='verdigris'] {
+  --ground: #eaf2ee;
+  --surface: #f9fdfa;
+  --sunk: #dde9e3;
+  --ink: #12332b;
+  --ink-mid: #3f5f55;
+  --ink-dim: #7d938b;
+  --line: rgba(18, 51, 43, 0.13);
+  --line-strong: rgba(18, 51, 43, 0.28);
+  --accent: #a8402f;
+  --accent-soft: #cb705f;
+  --accent-2: #b1801d;
+  --live: #2f7160;
+  --on-accent: #f9fdfa;
+  --tiles: light;
+}
+
+[data-theme='madder'] {
+  --ground: #fbeee9;
+  --surface: #fffaf7;
+  --sunk: #f3e0d8;
+  --ink: #3a1512;
+  --ink-mid: #6d4139;
+  --ink-dim: #a3776d;
+  --line: rgba(58, 21, 18, 0.13);
+  --line-strong: rgba(58, 21, 18, 0.28);
+  --accent: #8f2f22;
+  --accent-soft: #b7574a;
+  --accent-2: #a5701c;
+  --live: #45786a;
+  --on-accent: #fffaf7;
+  --tiles: light;
+}
+
+[data-theme='limewash'] {
+  --ground: #f2f3ef;
+  --surface: #ffffff;
+  --sunk: #e6e8e2;
+  --ink: #1e241f;
+  --ink-mid: #4e564e;
+  --ink-dim: #8a918a;
+  --line: rgba(30, 36, 31, 0.12);
+  --line-strong: rgba(30, 36, 31, 0.26);
+  --accent: #9d3b2c;
+  --accent-soft: #c1685a;
+  --accent-2: #8a7318;
+  --live: #3f7360;
+  --on-accent: #ffffff;
+  --tiles: light;
+}
+
+/* ---------------- typefaces ---------------- */
+
+:root,
+[data-type='open'] {
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'Archivo', system-ui, sans-serif;
+  --base-size: 15px;
+}
+
+[data-type='heritage'] {
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'Lora', Georgia, serif;
+  --base-size: 15.5px;
+}
+
+[data-type='clean'] {
+  --display: 'Space Grotesk', system-ui, sans-serif;
+  --body: 'Archivo', system-ui, sans-serif;
+  --base-size: 15px;
+}
+
+:root {
+  --script: 'Kalam', cursive; /* accent words only. never body text. */
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r: 8px;
+  --r-lg: 14px;
+  --shell: 1280px;
+}
+
+/*
+  Alias layer.
+
+  The first build used vat/resist naming for a dark ground. Rather than rewrite
+  every component, the old names now resolve to the theme tokens. Under a light
+  theme --vat-raised is cream and --resist is indigo, which is exactly right:
+  the semantics inverted along with the design.
+*/
+:root {
+  --vat-deep: var(--ground);
+  --vat: var(--ground);
+  --vat-raised: var(--surface);
+  --vat-lift: var(--sunk);
+  --resist: var(--ink);
+  --resist-mid: var(--ink-mid);
+  --resist-dim: var(--ink-dim);
+  --madder: var(--accent);
+  --madder-soft: var(--accent-soft);
+  --haldi: var(--accent-2);
+  --verdigris: var(--live);
+  --syahi: var(--on-accent);
+}
