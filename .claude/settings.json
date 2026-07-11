@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
+      "Bash(timeout 8 node src/server.js)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(xargs -I{} sh -c 'echo \"== {} ==\"; cat {}')",
+      "Bash(rm -rf crafttrail/client/dist crafttrail/client/index.html crafttrail/client/node_modules/.bin crafttrail/client/node_modules/.package-lock.json crafttrail/client/node_modules/.vite crafttrail/client/node_modules/@babel)",
+      "Bash(git rebase *)"
+    ]
+  }
+}
