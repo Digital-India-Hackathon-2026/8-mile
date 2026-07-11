@@ -1,0 +1,32 @@
+.au { display: grid; place-items: center; min-height: calc(100vh - 66px); padding: 40px 20px 70px; }
+.au__box { width: 100%; max-width: 400px; }
+.au__head { text-align: center; margin-bottom: 26px; }
+.au__head h1 { font-size: clamp(1.7rem, 4vw, 2.2rem); }
+.au__head p { margin: 10px 0 0; color: var(--ink-mid); font-size: .89rem; }
+.au__card { padding: 26px; }
+.au__err { margin-bottom: 16px; }
+.au__wide { width: 100%; margin-top: 6px; }
+.au__alt { text-align: center; margin: 20px 0 0; font-size: .84rem; color: var(--ink-dim); }
+.au__alt a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.au__hint { margin: 5px 0 0; font-size: .72rem; color: var(--ink-dim); }
+.au__demo {
+  margin-top: 18px; padding: 12px 14px; border: 1px dashed var(--line-strong);
+  border-radius: var(--r); font-size: .74rem; color: var(--ink-dim); line-height: 1.6;
+}
+.au__demo strong { color: var(--ink-mid); font-weight: 500; }
+.au__demo code { font-family: var(--mono); font-size: .95em; }
+.au__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--ink-dim);
+  font-size: .78rem;
+}
+.au__divider::before,
+.au__divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
